@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.ufps.sistemadonacion.controlador.sistemaControlador">
+
+    <top>
+        <VBox spacing="5.0" style="-fx-background-color: #606060;">
+            <padding>
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0"/>
+            </padding>
+
+            <Label text="SISTEMA DE EMERGENCIA Y DONACIONES"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+            <Label text="Gestión de terremotos, damnificados, empresas, donaciones y ayudas"
+                   style="-fx-text-fill: #dddddd;"/>
+        </VBox>
+    </top>
+
+
+    <center>
+
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+
+            <!-- ================= UBICACIÓN ================= -->
+
+            <Tab text="Ubicación">
+
+                <content>
+
+                    <ScrollPane fitToWidth="true">
+
+                        <VBox spacing="15.0"
+                              style="-fx-background-color: #eeeeee;">
+
+                            <padding>
+                                <Insets bottom="20.0"
+                                        left="20.0"
+                                        right="20.0"
+                                        top="20.0"/>
+                            </padding>
+
+                            <Label text="Registrar ubicación"
+                                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                            <GridPane hgap="10.0" vgap="10.0">
+
+                                <Label text="País:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="txtPais"
+                                           promptText="Nombre del país"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="0"/>
+
+                                <Button text="Registrar país"
+                                        onAction="#registrarPais"
+                                        GridPane.columnIndex="2"
+                                        GridPane.rowIndex="0"/>
+
+
+                                <Label text="Departamento:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="1"/>
+
+                                <TextField fx:id="txtDepartamento"
+                                           promptText="Nombre del departamento"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="1"/>
+
+                                <ComboBox fx:id="cbPais"
+                                          promptText="Seleccione país"
+                                          GridPane.columnIndex="2"
+                                          GridPane.rowIndex="1"/>
+
+                                <Button text="Registrar departamento"
+                                        onAction="#registrarDepartamento"
+                                        GridPane.columnIndex="3"
+                                        GridPane.rowIndex="1"/>
+
+
+                                <Label text="Municipio:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="2"/>
+
+                                <TextField fx:id="txtMunicipio"
+                                           promptText="Nombre del municipio"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="2"/>
+
+                                <ComboBox fx:id="cbDepartamento"
+                                          promptText="Seleccione departamento"
+                                          GridPane.columnIndex="2"
+                                          GridPane.rowIndex="2"/>
+
+                                <Button text="Registrar municipio"
+                                        onAction="#registrarMunicipio"
+                                        GridPane.columnIndex="3"
+                                        GridPane.rowIndex="2"/>
+
+                            </GridPane>
+
+                            <Separator/>
+
+                            <Label text="Ubicaciones registradas"
+                                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                            <ListView fx:id="listaUbicacion"
+                                      prefHeight="300.0"/>
+
+                        </VBox>
+
+                    </ScrollPane>
+
+                </content>
+
+            </Tab>
+
+
+            <!-- ================= TERREMOTOS ================= -->
+
+            <Tab text="Terremotos">
+
+                <content>
+
+                    <ScrollPane fitToWidth="true">
+
+                        <VBox spacing="15.0"
+                              style="-fx-background-color: #eeeeee;">
+
+                            <padding>
+                                <Insets bottom="20.0"
+                                        left="20.0"
+                                        right="20.0"
+                                        top="20.0"/>
+                            </padding>
+
+                            <Label text="Registrar terremoto"
+                                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                            <GridPane hgap="10.0" vgap="10.0">
+
+                                <Label text="Fecha:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="txtFecha"
+                                           promptText="AAAA-MM-DD"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="0"/>
+
+
+                                <Label text="Hora:"
+                                       GridPane.columnIndex="2"
+                                       GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="txtHora"
+                                           promptText="HH:MM"
+                                           GridPane.columnIndex="3"
+                                           GridPane.rowIndex="0"/>
+
+
+                                <Label text="Profundidad:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="1"/>
+
+                                <TextField fx:id="txtProfundidad"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="1"/>
+
+
+                                <Label text="Magnitud:"
+                                       GridPane.columnIndex="2"
+                                       GridPane.rowIndex="1"/>
+
+                                <TextField fx:id="txtMagnitud"
+                                           GridPane.columnIndex="3"
+                                           GridPane.rowIndex="1"/>
+
+
+                                <Label text="Epicentro:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="2"/>
+
+                                <TextField fx:id="txtEpicentro"
+                                           GridPane.columnIndex="1"
+                                           GridPane.columnSpan="3"
+                                           GridPane.rowIndex="2"/>
+
+                            </GridPane>
+
+                            <Button text="Registrar terremoto"
+                                    onAction="#registrarTerremoto"/>
+
+                            <Separator/>
+
+                            <Label text="Terremotos registrados"
+                                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                            <ListView fx:id="listaTerremotos"
+                                      prefHeight="300.0"/>
+
+                        </VBox>
+
+                    </ScrollPane>
+
+                </content>
+
+            </Tab>
+
+
+            <!-- ================= DAMNIFICADOS ================= -->
+
+            <Tab text="Damnificados">
+
+                <content>
+
+                    <ScrollPane fitToWidth="true">
+
+                        <VBox spacing="15.0"
+                              style="-fx-background-color: #eeeeee;">
+
+                            <padding>
+                                <Insets bottom="20.0"
+                                        left="20.0"
+                                        right="20.0"
+                                        top="20.0"/>
+                            </padding>
+
+                            <Label text="Registrar damnificado"
+                                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                            <GridPane hgap="10.0" vgap="10.0">
+
+                                <Label text="Nombre:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="txtNombre"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="0"/>
+
+
+                                <Label text="Edad:"
+                                       GridPane.columnIndex="2"
+                                       GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="txtEdad"
+                                           GridPane.columnIndex="3"
+                                           GridPane.rowIndex="0"/>
+
+
+                                <Label text="Estatura:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="1"/>
+
+                                <TextField fx:id="txtEstatura"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="1"/>
+
+
+                                <Label text="Peso:"
+                                       GridPane.columnIndex="2"
+                                       GridPane.rowIndex="1"/>
+
+                                <TextField fx:id="txtPeso"
+                                           GridPane.columnIndex="3"
+                                           GridPane.rowIndex="1"/>
+
+
+                                <Label text="Identificación:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="2"/>
+
+                                <TextField fx:id="txtIdentificacion"
+                                           GridPane.columnIndex="1"
+                                           GridPane.rowIndex="2"/>
+
+
+                                <Label text="Estado:"
+                                       GridPane.columnIndex="2"
+                                       GridPane.rowIndex="2"/>
+
+                                <ComboBox fx:id="cbEstado"
+                                          promptText="Seleccione"
+                                          GridPane.columnIndex="3"
+                                          GridPane.rowIndex="2"/>
+
+
+                                <Label text="Nivel afectación:"
+                                       GridPane.columnIndex="0"
+                                       GridPane.rowIndex="3"/>
+
+                                <ComboBox fx:id="cbNivel"
+                                          promptText="Seleccione"
+                                          GridPane.columnIndex="1"
+                                          GridPane.rowIndex="3"/>
+
+                            </GridPane>
+
+                            <Button text="Registrar damnificado"
+                                    onAction="#registrarDamnificado"/>
+
+                            <Separator/>
+
+                            <Label text="Damnificados registrados"
+                                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                            <ListView fx:id="listaDamnificados"
+                                      prefHeight="300.0"/>
+
+                        </VBox>
+
+                    </ScrollPane>
+
+                </content>
+
+            </Tab>
+
+
+            <!-- ================= EMPRESAS ================= -->
+
+            <Tab text="Empresas">
+
+                <content>
+
+                    <VBox spacing="15.0"
+                          style="-fx-background-color: #eeeeee;">
+
+                        <padding>
+                            <Insets bottom="20.0"
+                                    left="20.0"
+                                    right="20.0"
+                                    top="20.0"/>
+                        </padding>
+
+                        <Label text="Registrar empresa"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                        <GridPane hgap="10.0"
+                                  vgap="10.0">
+
+                            <Label text="Nombre:"
+                                   GridPane.columnIndex="0"/>
+
+                            <TextField fx:id="txtEmpresa"
+                                       GridPane.columnIndex="1"/>
+
+
+                            <Label text="Representante:"
+                                   GridPane.columnIndex="2"/>
+
+                            <TextField fx:id="txtRepresentanteEmpresa"
+                                       GridPane.columnIndex="3"/>
+
+                        </GridPane>
+
+                        <Button text="Registrar empresa"
+                                onAction="#registrarEmpresa"/>
+
+                        <Separator/>
+
+                        <Label text="Empresas registradas"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <ListView fx:id="listaEmpresas"
+                                  prefHeight="350.0"/>
+
+                    </VBox>
+
+                </content>
+
+            </Tab>
+
+
+            <!-- ================= ORGANIZACIONES ================= -->
+
+            <Tab text="Organizaciones">
+
+                <content>
+
+                    <VBox spacing="15.0"
+                          style="-fx-background-color: #eeeeee;">
+
+                        <padding>
+                            <Insets bottom="20.0"
+                                    left="20.0"
+                                    right="20.0"
+                                    top="20.0"/>
+                        </padding>
+
+                        <Label text="Registrar organización"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                        <GridPane hgap="10.0"
+                                  vgap="10.0">
+
+                            <Label text="Nombre:"
+                                   GridPane.columnIndex="0"
+                                   GridPane.rowIndex="0"/>
+
+                            <TextField fx:id="txtOrganizacion"
+                                       GridPane.columnIndex="1"
+                                       GridPane.rowIndex="0"/>
+
+
+                            <Label text="Representante:"
+                                   GridPane.columnIndex="2"
+                                   GridPane.rowIndex="0"/>
+
+                            <TextField fx:id="txtRepresentanteOrganizacion"
+                                       GridPane.columnIndex="3"
+                                       GridPane.rowIndex="0"/>
+
+
+                            <Label text="Tipo:"
+                                   GridPane.columnIndex="0"
+                                   GridPane.rowIndex="1"/>
+
+                            <ComboBox fx:id="cbTipoOrganizacion"
+                                      promptText="Seleccione"
+                                      GridPane.columnIndex="1"
+                                      GridPane.rowIndex="1"/>
+
+                        </GridPane>
+
+                        <Button text="Registrar organización"
+                                onAction="#registrarOrganizacion"/>
+
+                        <Separator/>
+
+                        <Label text="Organizaciones registradas"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <ListView fx:id="listaOrganizaciones"
+                                  prefHeight="350.0"/>
+
+                    </VBox>
+
+                </content>
+
+            </Tab>
+
+
+            <!-- ================= DONACIONES ================= -->
+
+            <Tab text="Donaciones">
+
+                <content>
+
+                    <VBox spacing="15.0"
+                          style="-fx-background-color: #eeeeee;">
+
+                        <padding>
+                            <Insets bottom="20.0"
+                                    left="20.0"
+                                    right="20.0"
+                                    top="20.0"/>
+                        </padding>
+
+                        <Label text="Registrar donación"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                        <GridPane hgap="10.0"
+                                  vgap="10.0">
+
+                            <Label text="Empresa:"
+                                   GridPane.columnIndex="0"
+                                   GridPane.rowIndex="0"/>
+
+                            <ComboBox fx:id="cbEmpresa"
+                                      promptText="Seleccione empresa"
+                                      GridPane.columnIndex="1"
+                                      GridPane.rowIndex="0"/>
+
+
+                            <Label text="Organización:"
+                                   GridPane.columnIndex="2"
+                                   GridPane.rowIndex="0"/>
+
+                            <ComboBox fx:id="cbOrganizacion"
+                                      promptText="Seleccione organización"
+                                      GridPane.columnIndex="3"
+                                      GridPane.rowIndex="0"/>
+
+
+                            <Label text="Cantidad:"
+                                   GridPane.columnIndex="0"
+                                   GridPane.rowIndex="1"/>
+
+                            <TextField fx:id="txtCantidadDonacion"
+                                       GridPane.columnIndex="1"
+                                       GridPane.rowIndex="1"/>
+
+
+                            <Label text="Tipo:"
+                                   GridPane.columnIndex="2"
+                                   GridPane.rowIndex="1"/>
+
+                            <ComboBox fx:id="cbTipoDonacion"
+                                      promptText="Seleccione"
+                                      GridPane.columnIndex="3"
+                                      GridPane.rowIndex="1"/>
+
+                        </GridPane>
+
+                        <Button text="Registrar donación"
+                                onAction="#registrarDonacion"/>
+
+                        <Separator/>
+
+                        <Label text="Donaciones registradas"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <ListView fx:id="listaDonaciones"
+                                  prefHeight="350.0"/>
+
+                    </VBox>
+
+                </content>
+
+            </Tab>
+
+
+            <!-- ================= AYUDAS ================= -->
+
+            <Tab text="Ayudas">
+
+                <content>
+
+                    <VBox spacing="15.0"
+                          style="-fx-background-color: #eeeeee;">
+
+                        <padding>
+                            <Insets bottom="20.0"
+                                    left="20.0"
+                                    right="20.0"
+                                    top="20.0"/>
+                        </padding>
+
+                        <Label text="Generar y entregar ayuda"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                        <GridPane hgap="10.0"
+                                  vgap="10.0">
+
+                            <Label text="Organización:"
+                                   GridPane.columnIndex="0"
+                                   GridPane.rowIndex="0"/>
+
+                            <ComboBox fx:id="cbOrganizacionAyuda"
+                                      promptText="Seleccione organización"
+                                      GridPane.columnIndex="1"
+                                      GridPane.rowIndex="0"/>
+
+
+                            <Label text="Damnificado:"
+                                   GridPane.columnIndex="2"
+                                   GridPane.rowIndex="0"/>
+
+                            <ComboBox fx:id="cbDamnificadoAyuda"
+                                      promptText="Seleccione damnificado"
+                                      GridPane.columnIndex="3"
+                                      GridPane.rowIndex="0"/>
+
+
+                            <Label text="Cantidad:"
+                                   GridPane.columnIndex="0"
+                                   GridPane.rowIndex="1"/>
+
+                            <TextField fx:id="txtCantidadAyuda"
+                                       GridPane.columnIndex="1"
+                                       GridPane.rowIndex="1"/>
+
+
+                            <Label text="Tipo:"
+                                   GridPane.columnIndex="2"
+                                   GridPane.rowIndex="1"/>
+
+                            <ComboBox fx:id="cbTipoAyuda"
+                                      promptText="Seleccione"
+                                      GridPane.columnIndex="3"
+                                      GridPane.rowIndex="1"/>
+
+                        </GridPane>
+
+                        <Button text="Generar y entregar ayuda"
+                                onAction="#generarAyuda"/>
+
+                        <Separator/>
+
+                        <Label text="Ayudas registradas"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <ListView fx:id="listaAyudas"
+                                  prefHeight="350.0"/>
+
+                    </VBox>
+
+                </content>
+
+            </Tab>
+
+        </TabPane>
+
+    </center>
+
+</BorderPane>

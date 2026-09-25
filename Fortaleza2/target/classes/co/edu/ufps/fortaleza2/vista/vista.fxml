@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0"
+            prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.ufps.fortaleza2.controlador.fortalezaControlador">
+
+    <top>
+
+        <VBox spacing="5.0"
+              style="-fx-background-color: #555555;">
+
+            <padding>
+                <Insets bottom="15.0"
+                        left="20.0"
+                        right="20.0"
+                        top="15.0"/>
+            </padding>
+
+            <Label text="SISTEMA DE DOCENTES"
+                   style="-fx-font-size: 22px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+
+            <Label text="Registro y consulta de información de docentes"
+                   style="-fx-text-fill: #dddddd;"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="15.0"
+              style="-fx-background-color: #eeeeee;">
+
+            <padding>
+                <Insets bottom="20.0"
+                        left="25.0"
+                        right="25.0"
+                        top="20.0"/>
+            </padding>
+
+            <Label text="Registrar docente"
+                   style="-fx-font-size: 18px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #333333;"/>
+
+
+            <GridPane hgap="10.0"
+                      vgap="10.0">
+
+                <Label text="Código:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="0"/>
+
+                <TextField fx:id="txtCodigo"
+                           promptText="Código"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="0"/>
+
+
+                <Label text="Nombre:"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="0"/>
+
+                <TextField fx:id="txtNombre"
+                           promptText="Nombre completo"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="0"/>
+
+
+                <Label text="Título:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="1"/>
+
+                <TextField fx:id="txtTitulo"
+                           promptText="Título profesional"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"/>
+
+
+                <Label text="Departamento:"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="1"/>
+
+                <TextField fx:id="txtDepartamento"
+                           promptText="Departamento"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="1"/>
+
+
+                <Label text="Tipo de docente:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="2"/>
+
+                <ComboBox fx:id="cbTipoDocente"
+                          promptText="Seleccione tipo"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="2"/>
+
+            </GridPane>
+
+
+            <Separator/>
+
+            <Label text="Información específica"
+                   style="-fx-font-size: 16px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #444444;"/>
+
+
+            <GridPane hgap="10.0"
+                      vgap="10.0">
+
+                <Label text="N° contrato:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="0"/>
+
+                <TextField fx:id="txtContrato"
+                           promptText="Solo catedrático"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="0"/>
+
+                <Label text="N° horas:"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="0"/>
+
+                <TextField fx:id="txtHoras"
+                           promptText="Solo catedrático"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="0"/>
+
+                <Label text="Valor hora:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="1"/>
+
+                <TextField fx:id="txtValorHora"
+                           promptText="Solo catedrático"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"/>
+
+                <Label text="Salario básico:"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="1"/>
+
+                <TextField fx:id="txtSalBasico"
+                           promptText="Ocasional / Planta"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="1"/>
+
+                <Label text="Puntos salario:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="2"/>
+
+                <TextField fx:id="txtPuntos"
+                           promptText="Solo planta"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="2"/>
+
+                <Label text="Valor punto:"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="2"/>
+
+                <TextField fx:id="txtValorPunto"
+                           promptText="Solo planta"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="2"/>
+
+
+                <Label text="Categoría:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="3"/>
+
+                <TextField fx:id="txtCategoria"
+                           promptText="Solo planta"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="3"/>
+
+
+                <Label text="N° resolución:"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="3"/>
+
+                <TextField fx:id="txtResolucion"
+                           promptText="Solo planta"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="3"/>
+
+                <Label text="Fecha:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="4"/>
+
+                <TextField fx:id="txtFecha"
+                           promptText="AAAA-MM-DD"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="4"/>
+
+            </GridPane>
+
+
+            <Button text="Registrar docente"
+                    onAction="#registrarDocente"
+                    prefWidth="180.0"
+                    style="-fx-background-color: #555555;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;"/>
+
+
+            <Separator/>
+
+            <Label text="Docentes registrados"
+                   style="-fx-font-size: 16px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #444444;"/>
+
+            <ListView fx:id="listaDocentes"
+                      prefHeight="250.0"/>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

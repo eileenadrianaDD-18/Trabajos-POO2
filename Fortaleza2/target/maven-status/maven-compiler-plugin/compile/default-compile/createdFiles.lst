@@ -1,0 +1,9 @@
+co\edu\ufps\fortaleza2\App.class
+co\edu\ufps\fortaleza2\modelo\DocentePlanta.class
+co\edu\ufps\fortaleza2\controlador\fortalezaControlador.class
+co\edu\ufps\fortaleza2\modelo\DocenteOcasional.class
+module-info.class
+co\edu\ufps\fortaleza2\PrimaryController.class
+co\edu\ufps\fortaleza2\modelo\DocenteCatedratico.class
+co\edu\ufps\fortaleza2\modelo\Docente.class
+co\edu\ufps\fortaleza2\SecondaryController.class
